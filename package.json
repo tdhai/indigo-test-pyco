@@ -1,0 +1,22 @@
+{
+  "name": "indigo-test-pyco",
+  "version": "1.0.0",
+  "description": "INDIGO-TEST",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tdhai/indigo-test-pyco.git"
+  },
+  "author": "Hai Truong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tdhai/indigo-test-pyco/issues"
+  },
+  "homepage": "https://github.com/tdhai/indigo-test-pyco#readme",
+  "dependencies": {
+    "mocha": "^6.2.2"
+  }
+}
