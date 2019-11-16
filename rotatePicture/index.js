@@ -8,4 +8,4 @@ const K = 1;
 
 const rotatePicture = new RotatePicture(picture);
 const result = rotatePicture.rotatePictureNTimes(K);
-console.log(`Picture after rotate ${K} times: `, result);
+console.log(`Rotate picture ${K} times: `, result);
