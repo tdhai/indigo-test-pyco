@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/tdhai/indigo-test-pyco#readme",
   "dependencies": {
-    "mocha": "^6.2.2"
+    "mocha": "^6.2.2",
+    "validator": "^12.0.0"
   }
 }
