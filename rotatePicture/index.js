@@ -7,5 +7,5 @@ const picture = [[1,2,3,4],
 const K = 1;
 
 const rotatePicture = new RotatePicture(picture);
-const result = rotatePicture.rotatePictureNTimes(K);
+const result = rotatePicture.rotateNTimes(K);
 console.log(`Rotate picture ${K} times: `, result);

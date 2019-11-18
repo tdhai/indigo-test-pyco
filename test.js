@@ -12,12 +12,12 @@ describe('Rotate picture square test case', () => {
   const rotateMatrix = new RotatePicture(picture);
   it('Return error when do not times, or negative number', function () {
 
-    const result = rotateMatrix.rotatePictureNTimes()
+    const result = rotateMatrix.rotateNTimes()
     assert.deepEqual(result, Error('times is not a even number'))
   });
 
   it(`rotate picture successfull, or number of times is even number`, () => {
-    const result = rotateMatrix.rotatePictureNTimes(4)
+    const result = rotateMatrix.rotateNTimes(4)
     assert.equal(result, picture)
   });
 });
