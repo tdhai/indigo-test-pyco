@@ -1,6 +1,7 @@
-const RotatePicture = require('./rotatePicture/rotatePicture');
+const rotatePicture = require('./rotatePicture/rotatePicture');
 const assert = require('assert');
 const productRecommendation = require('./productRecommendation/productRecommendation')
+const reservation = require('./hotelReservation/hotelReservation');
 
 describe('Rotate picture square test case', () => {
   const picture = [
@@ -9,8 +10,8 @@ describe('Rotate picture square test case', () => {
     [9, 10, 11, 12],
     [13, 14, 15, 16]
   ];
-  const rotateMatrix = new RotatePicture(picture);
-  it('Return error when do not times, or negative number', function () {
+  const rotateMatrix = new rotatePicture(picture);
+  it('Return error when do not times, or negative number',  () => {
 
     const result = rotateMatrix.rotateNTimes()
     assert.deepEqual(result, Error('times is not a even number'))
@@ -83,5 +84,43 @@ describe("Product recommendation test case", () => {
   it("bundle = 3", () => {
     const result = recommendation.productRecommendation(inputBundle3.age, inputBundle3.student, inputBundle3.income)
     assert.deepEqual(result, 3)
+  })
+})
+
+describe("Hotel reservation test case", ()=>{
+       const listArrialTime= [1,5];
+       const badListArrialTime = [8,88]
+       const listDepartureTime= [2,6];
+       const badListDepartureTime = [9,99]
+       const k= 1
+    
+  it("check room sucessfull", ()=>{
+    const result = reservation(listArrialTime, listDepartureTime, k)
+    assert.equal(result, true)
+  })
+  
+  it("check room do not departure time should be sucessfull", ()=>{
+    const result = reservation(listDepartureTime, [], k)
+    assert.deepEqual(result, true)
+  })
+
+  it("check room do not arrial time should be sucessfull", ()=>{
+    const result = reservation([], listDepartureTime, k)
+    assert.deepEqual(result, true)
+  })
+
+  it("check room do not arrial and departure time should be sucessfull", ()=>{
+    const result = reservation([], [], k)
+    assert.deepEqual(result, true)
+  })
+
+  it("check room do not quantity should error", ()=>{
+    const result = reservation(listArrialTime, listDepartureTime)
+    assert.deepEqual(result, Error('Invalid number of rooms'))
+  })
+
+  it("check room list arrial wrong should false", ()=>{
+    const result = reservation(badListArrialTime, listDepartureTime, k)
+    assert.deepEqual(result, Error('Please check arrial time and departure time again!'))
   })
 })
